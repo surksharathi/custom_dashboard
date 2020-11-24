@@ -133,13 +133,32 @@
 // export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Gallery));
 
 import React, {Component} from 'react';
+import {
+	 	Row,
+	 	Col,
+	 	List,
+	 	Card,
+	 	Avatar,
+		Icon,
+		Breadcrumb,
+		Divider,
+	 	Badge,
+	 	Carousel,
+	 	PageHeader,
+	 	Skeleton,
+	 	Empty, Popover, Button
+	 } from "antd";
 
 const Gallery=()=>{
 
 	return(
-		<div>
-			Testing
-		</div>
+		<React.Fragment>
+			<PageHeader
+				style={{margin: '16px 0'}}
+					title="Analytics"
+ 					subTitle="Get a chance to see your Analytics"
+				/>
+		</React.Fragment>
 	)
 }
 export default Gallery;

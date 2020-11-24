@@ -15,8 +15,9 @@ const createDocument = async () => {
        
     }
      await Dashboard.insertMany(dataArray);
-    
-  return {message:"Successfully created documents in database"};
+     const query=   await Dashboard.find({});
+  return query;
+ 
 };
 
 const getCollection= async()=>{

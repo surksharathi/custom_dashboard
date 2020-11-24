@@ -7,13 +7,13 @@ import Posts from './Posts'
 import Gallery from './Gallery'
 
 
-class Index extends Component {
+const Index=(props)=> {
 
-    render() {
+     
         const {Header, Content, Footer} = Layout;
 
 
-		const {match, history} = this.props;
+		const {match, history} = props;
 
 		const selectedKeys = history.location.pathname.substr(1);
 		const defaultOpenKeys = selectedKeys.split('/')[1];
@@ -53,6 +53,6 @@ class Index extends Component {
             </Layout>
         );
     }
-}
+
 
 export default Index;

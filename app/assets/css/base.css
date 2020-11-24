@@ -1,0 +1,30 @@
+@import "./vendors.css";
+/* @import "./variables.css";
+@import "./overrides.css"; */
+
+body {
+  font-weight: var(--font-weight);
+}
+
+.card {
+  &:not(:first-of-type) {
+    margin-top: var(--spacing-lg);
+  }
+}
+
+.link {
+  color: var(--link-color);
+  cursor: pointer;
+  transition: color var(--transition-duration);
+
+  &:hover,
+  &:active {
+    color: var(--link-color-hover);
+  }
+
+  &.disabled {
+    color: var(--link-color) !important;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

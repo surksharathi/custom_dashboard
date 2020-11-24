@@ -1,0 +1,8 @@
+:root {
+    /* Colors */
+    --color-red: #ed1c24;
+  
+    /* States */
+    --state-primary: var(--color-red);
+  }
+  

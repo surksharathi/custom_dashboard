@@ -17,7 +17,7 @@ import {
 
 import App from './routes/index';
 import './index.css'
-
+import { logger } from 'redux-logger';
 // Import the index reducer and sagas
 import IndexReducer from './store/index-reducer'
 import IndexSagas from './store/index-sagas'
@@ -29,29 +29,21 @@ const sagaMiddleware = createSagaMiddleware();
 
 export const hist = createBrowserHistory();
 
-// Redux DevTools - completely optional, but this is necessary for it to
-// work properly with redux saga.  Otherwise you'd just do:
-//
-// const store = createStore(
-//   IndexReducer,
-//   applyMiddleware(sagaMiddleware)
-// )
-
 /*eslint-disable */
 const composeSetup = process.env.NODE_ENV !== 'production' && typeof window === 'object' &&
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
 /*eslint-enable */
-
+const middleware=[sagaMiddleware,logger]
 const store = createStore(
     IndexReducer,
-    composeSetup(applyMiddleware(sagaMiddleware)), // allows redux devtools to watch sagas
+    applyMiddleware(...middleware), // allows redux devtools to watch sagas
 );
 
 // Begin our Index Saga
 sagaMiddleware.run(IndexSagas);
 
-// Setup the top level router component for our React Router
+
 ReactDOM.render(
     <Provider store={store}>
         <Router history={hist}>

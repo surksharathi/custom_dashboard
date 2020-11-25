@@ -1,7 +1,7 @@
 const mongoose = require( "mongoose" );
 const Dashboard= require("./model")
 const DashboardCollection = mongoose.model( "Dashboard" );
-const moment = require('moment');
+
 
 
 const createDocument = async () => {
@@ -32,30 +32,32 @@ const getCollection= async()=>{
  }
 
  const updateCollection=async(id)=>{
-  var date = new Date.now();
+  var date = new Date();
   
    await Dashboard.updateMany({"_id" : id},{
         activeIndicator:false,
         expiryDate: date
      })
-  const doc= await  Dashboard.find({"_id":id})
+  const doc= await  Dashboard.find({})
      return doc
 
  }
- const expiredDocument=async()=>{
-  var date = new Date.now();
-  const dateNow=   moment(date).format('MM-DD-YYYY');
- const response= await Dashboard.updateMany({activeIndicator:true}, {$set: {expiryDate:dateNow}});
-  return response
+ const expiredCollection=async()=>{
+  var date = new Date();
+  await Dashboard.updateMany({activeIndicator:true}, {$set: {expiryDate:date}});
+ const query=   await Dashboard.find({});
+  return  query;
  }
 
 
+ 
 
 
 module.exports = {
     createDocument,
     deleteCollection,
     updateCollection,
-    expiredDocument,
-    getCollection
+    expiredCollection,
+    getCollection,
+   
 };

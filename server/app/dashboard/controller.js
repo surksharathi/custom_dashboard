@@ -38,8 +38,9 @@ exports.delete=async(req,res)=>{
 }
 exports.expiredDocument=async(req,res)=>{
  try{
-     const expiredDocument = await repository.expiredDocument();
-     res.success(expiredDocument)
+    
+    const expireData = await repository.expiredCollection();
+    res.success(expireData)
  }
  catch(err){
      res.send(err)

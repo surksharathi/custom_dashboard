@@ -132,21 +132,11 @@
 
 // export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Gallery));
 
-import React, {Component} from 'react';
+import React from 'react';
 import {
-	 	Row,
-	 	Col,
-	 	List,
-	 	Card,
-	 	Avatar,
-		Icon,
-		Breadcrumb,
-		Divider,
-	 	Badge,
-	 	Carousel,
+	 	
 	 	PageHeader,
-	 	Skeleton,
-	 	Empty, Popover, Button
+	 	
 	 } from "antd";
 
 const Gallery=()=>{

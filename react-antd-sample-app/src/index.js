@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {applyMiddleware, createStore, compose} from 'redux'
 import {createBrowserHistory} from 'history';
 import {Provider} from 'react-redux'
-import createSagaMiddleware from 'redux-saga'
+import createSagaMiddleware from 'redux-saga';
 
 import {
     Router,
@@ -48,7 +48,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={hist}>
             <Switch>
-            <Route exact path="/" render={() => (<Redirect to="/analytics" />)} />
+            <Route exact path="/" render={() => (<Redirect to="/list" />)} />
                 <Route path="/"  component={App}/>
             </Switch>
         </Router>

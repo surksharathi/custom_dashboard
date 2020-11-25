@@ -30,11 +30,11 @@ const Index=(props)=> {
                         mode="horizontal"
                         style={{lineHeight: '64px'}}
                     >
-                        <Menu.Item key="analytics">
-							<Link to="/analytics">Analytics</Link>
-                        </Menu.Item>
                         <Menu.Item key="list">
 							<Link to="/list">List</Link>
+                        </Menu.Item>
+                        <Menu.Item key="analytics">
+							<Link to="/analytics">Analytics</Link>
                         </Menu.Item>
 						
                       
@@ -42,8 +42,8 @@ const Index=(props)=> {
                 </Header>
                 <Content style={{padding: '0 50px'}}>
 					<Switch>
-						<Route path={`${match.url}analytics`} breadcrumbName="Analytics" component={Posts}/>
-						<Route path={`${match.url}list`} breadcrumbName="List" component={Gallery}/>
+						<Route path={`${match.url}list`} breadcrumbName="list" component={Posts}/>
+						<Route path={`${match.url}analytics`} breadcrumbName="Analytics" component={Gallery}/>
 						
 					</Switch>
                 </Content>

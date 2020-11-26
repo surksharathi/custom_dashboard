@@ -6,7 +6,6 @@ import * as postActions from '../../store/posts/actions'
 
 	
 const Post =()=>{
-
 const dispatch= useDispatch();
 const counter = useSelector(state => state.postsReducer.collection)
 const onDelete=async(e,id)=>{dispatch(postActions.deleteOneDocument(id))}
@@ -67,8 +66,7 @@ React.useEffect(async () => {dispatch(postActions.fetchPost())},[]);
 			</div>
 		  ),
 		},
-		
-			{
+		{
 				title: 'Action',
 				dataIndex: 'action',
 				key: '_id',

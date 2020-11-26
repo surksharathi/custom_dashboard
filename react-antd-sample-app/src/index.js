@@ -4,24 +4,18 @@ import {applyMiddleware, createStore, compose} from 'redux'
 import {createBrowserHistory} from 'history';
 import {Provider} from 'react-redux'
 import createSagaMiddleware from 'redux-saga';
-
+import 'antd/dist/antd.css';
 import {
     Router,
     Route,
     Switch,
     Redirect
 } from 'react-router-dom'
-
-// Import all of our components
-//import App from './App'
-
 import App from './routes/index';
 import './index.css'
 import { logger } from 'redux-logger';
-// Import the index reducer and sagas
 import IndexReducer from './store/index-reducer'
 import IndexSagas from './store/index-sagas'
-
 import registerServiceWorker from './registerServiceWorker';
 
 // Setup the middleware to watch between the Reducers and the Actions

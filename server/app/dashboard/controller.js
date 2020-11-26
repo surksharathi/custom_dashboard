@@ -47,7 +47,7 @@ exports.expiredDocument=async(req,res)=>{
  }
 }
 exports.updateDocument=async(req,res)=>{
-    console.log(req.body);
+   
     try{
         const id= req.body.id;
         const updateCollection= await repository.updateCollection(id);
